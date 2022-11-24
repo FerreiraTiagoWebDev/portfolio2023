@@ -24,10 +24,15 @@ module.exports = {
         },
         background: {
           main: "#faf5e6",
+          secondary: "#AC9496",
+          heavySecondary: "#4c102a",
         },
         footer: {
           main: "#273e47",
         },
+        darkBlue: "#0F2027",
+        midBlue: "#203A43",
+        lightBlue: "#2C5364",
         blue: {
           500: "#1a73e8",
         },
