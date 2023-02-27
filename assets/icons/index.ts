@@ -1,0 +1,1 @@
+export { CubeLogo } from "./logo";

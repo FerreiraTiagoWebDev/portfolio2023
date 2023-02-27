@@ -1,9 +1,9 @@
-const CubeLogo = () => {
+export const CubeLogo = () => {
   return (
     <>
       <svg
-        height="150"
-        width="175"
+        height="100"
+        width="150"
         viewBox="0 0 320 110.32265950429539"
         className="css-1j8o68f"
       >
@@ -30,5 +30,3 @@ const CubeLogo = () => {
     </>
   );
 };
-
-export default CubeLogo;
