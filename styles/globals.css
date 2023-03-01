@@ -3,22 +3,9 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Harmond";
-  src: url("/fonts/Harmond-ExtraBoldExpanded.otf");
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/Inter-Regular.woff2") format("woff2"),
+    url("/assets/fonts/Inter-Regular.woff") format("woff");
 }
-
-@font-face {
-  font-family: "HARMONY";
-  src: url("/fonts/HARMONY.otf");
-}
-
-@layer base {
-  html {
-    font-family: "HARMONY", "sans-serif";
-  }
-}
-/* @layer components {
-  .btn-primary {
-    @apply border-0 p-2 px-6 bg-slate-100 rounded-md;
-  }
-} */

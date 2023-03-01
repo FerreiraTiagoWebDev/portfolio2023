@@ -1,12 +1,18 @@
-import { ITailwindComponent } from "../../../types";
+import { ITailwindComponent } from "types";
 
 const Box = ({
   children,
   direction,
-  padding,
-  margin,
-  width,
-  height,
+  p,
+  px,
+  py,
+  m,
+  mx,
+  my,
+  mt,
+  maxW,
+  w,
+  h,
   fontSize,
   textAlign,
   color,
@@ -18,10 +24,16 @@ const Box = ({
 }: ITailwindComponent) => {
   let classes = " ";
   if (direction) classes += `${direction} `;
-  if (padding) classes += `p-${padding} `;
-  if (margin) classes += `m-${margin} `;
-  if (width) classes += `w-${width} `;
-  if (height) classes += `h-${height} `;
+  if (p) classes += `p-${p} `;
+  if (px) classes += `px-${px} `;
+  if (py) classes += `py-${py} `;
+  if (m) classes += `m-${m} `;
+  if (mx) classes += `mx-${mx} `;
+  if (mt) classes += `mt-${mt} `;
+  if (my) classes += `my-${my} `;
+  if (maxW) classes += `max-w-${maxW} `;
+  if (w) classes += `w-${w} `;
+  if (h) classes += `h-${h} `;
   if (fontSize) classes += `font-size-${fontSize} `;
   if (textAlign) classes += `text-${textAlign} `;
   if (color) classes += `text-${color} `;
@@ -29,8 +41,9 @@ const Box = ({
   if (borderRadius) classes += `rounded-${borderRadius} `;
   if (boxShadow) classes += `shadow-${boxShadow} `;
   if (className) classes += `${className} `;
+
   return (
-    <div className={classes} {...props}>
+    <div className={` ${classes} `} {...props}>
       {children}
     </div>
   );

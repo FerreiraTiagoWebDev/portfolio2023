@@ -1,47 +1,56 @@
-import { ITailwindComponent } from "../../../types";
+import { ITailwindComponent } from "types";
 
-const FlexCustom = ({
+const FlexBox = ({
+  children,
+  direction,
+  p,
+  px,
+  py,
+  m,
+  mx,
+  my,
+  mt,
+  maxW,
+  w,
+  h,
   alignItems,
+  justifyContent,
+  fontSize,
+  textAlign,
+  color,
   bg,
   borderRadius,
   boxShadow,
-  children,
   className,
-  color,
-  direction,
-  fontSize,
-  gap,
-  height,
-  justifyContent,
-  margin,
-  mx,
-  padding,
-  textAlign,
-  width,
   ...props
 }: ITailwindComponent) => {
   let classes = "flex ";
+  if (direction) classes += `${direction} `;
+  if (p) classes += `p-${p} `;
+  if (px) classes += `px-${px} `;
+  if (py) classes += `py-${py} `;
+  if (m) classes += `m-${m} `;
+  if (mx) classes += `mx-${mx} `;
+  if (mt) classes += `mt-${mt} `;
+  if (my) classes += `my-${my} `;
+  if (maxW) classes += `max-w-${maxW} `;
+  if (w) classes += `w-${w} `;
+  if (h) classes += `h-${h} `;
   if (alignItems) classes += `items-${alignItems} `;
+  if (justifyContent) classes += `${justifyContent} `;
+  if (fontSize) classes += `font-size-${fontSize} `;
+  if (textAlign) classes += `text-${textAlign} `;
+  if (color) classes += `text-${color} `;
   if (bg) classes += `bg-${bg} `;
   if (borderRadius) classes += `rounded-${borderRadius} `;
   if (boxShadow) classes += `shadow-${boxShadow} `;
   if (className) classes += `${className} `;
-  if (color) classes += `text-${color} `;
-  if (direction) classes += `${direction} `;
-  if (fontSize) classes += `font-size-${fontSize} `;
-  if (gap) classes += `gap-${gap} `;
-  if (height) classes += `h-${height} `;
-  if (justifyContent) classes += `${justifyContent} `;
-  if (margin) classes += `m-${margin} `;
-  if (mx) classes += `mx-${mx} `;
-  if (padding) classes += `p-${padding} `;
-  if (textAlign) classes += `text-${textAlign} `;
-  if (width) classes += `w-${width} `;
+
   return (
-    <div className={classes} {...props}>
+    <div className={` ${classes} `} {...props}>
       {children}
     </div>
   );
 };
 
-export default FlexCustom;
+export default FlexBox;

@@ -4,10 +4,16 @@ export interface ITailwindComponent {
   children?: React.ReactNode;
   direction?: "flex-row" | "flex-row-reverse" | "flex-col" | "flex-col-reverse";
   alignItems?: "stretch" | "start" | "center" | "end" | "baseline";
-  padding?: TTailwindMeasure;
-  margin?: TTailwindMeasure;
-  width?: TTailwindMeasure;
-  height?: TTailwindMeasure | string;
+  p?: TTailwindMeasure;
+  px?: TTailwindMeasure;
+  py?: TTailwindMeasure;
+  m?: TTailwindMeasure;
+  mx?: TTailwindMeasure;
+  my?: TTailwindMeasure;
+  mt?: TTailwindMeasure;
+  maxW?: any;
+  w?: TTailwindMeasure | "full";
+  h?: TTailwindMeasure | string;
   justifyContent?:
     | "justify-start"
     | "justify-end"
@@ -16,14 +22,13 @@ export interface ITailwindComponent {
     | "justify-around"
     | "justify-evenly";
   fontSize?: string | number;
-  textAlign?: "text-left" | "text-center" | "text-right";
+  textAlign?: "left" | "center" | "right";
   color?: string;
   bg?: string;
   gap?: TTailwindMeasure;
   borderRadius?: string | number;
   boxShadow?: string;
   border?: string;
-  mx?: TTailwindMeasure;
   fontWeight?: "normal" | "bold" | "lighter" | "bolder" | number;
   fontFamily?: string;
   textTransform?: "uppercase" | "lowercase" | "capitalize";

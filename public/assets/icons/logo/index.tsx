@@ -2,8 +2,8 @@ export const CubeLogo = () => {
   return (
     <>
       <svg
-        height="100"
-        width="150"
+        height="50"
+        width="125"
         viewBox="0 0 320 110.32265950429539"
         className="css-1j8o68f"
       >
