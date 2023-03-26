@@ -21,8 +21,8 @@ const CarouselItemsHomeRightPanelLogos = () => {
         <Image
           src={reactLogo}
           alt="Example image"
-          height="200px"
-          width="200px"
+          // height="200px"
+          // width="200px"
           objectFit="contain"
         />
       ),
