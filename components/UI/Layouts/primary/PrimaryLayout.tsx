@@ -15,7 +15,7 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({ children, ...divProps }) => {
       </Head>
       <div
         {...divProps}
-        className={`min-h-screen flex flex-col bg-background-black`}
+        className={`min-h-screen flex flex-col bg-primaryLighter`}
       >
         <SubHeader />
         <Header />
