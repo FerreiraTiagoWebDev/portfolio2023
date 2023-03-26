@@ -1,4 +1,5 @@
 import Carousel from "nuka-carousel";
+
 interface CarouselProps {
   items: any[];
 }
@@ -13,15 +14,10 @@ const CarouselCustom = ({ items }: CarouselProps) => {
       dragging
       enableKeyboardControls
       pauseOnHover={false}
-      // renderAnnounceSlideMessage={({ currentSlide }) => {
-      //   setIndexMath(currentSlide);
-      //   return `Slide ${currentSlide + 1}`;
-      // }}
+      style={{ width: "100%", height: "400px" }}
     >
-      {items.map(({ element, id }) => (
-        <div key={id} className="h-full">
-          {element}
-        </div>
+      {items.map(({ element, index }) => (
+        <div key={index}>{element}</div>
       ))}
     </Carousel>
   );

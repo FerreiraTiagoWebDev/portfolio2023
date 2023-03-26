@@ -1,8 +1,7 @@
 import { ITailwindComponent } from "types";
 
-const Button = ({
+const Grid = ({
   children,
-  direction,
   p,
   px,
   py,
@@ -10,43 +9,57 @@ const Button = ({
   mx,
   my,
   mt,
+  mb,
+  ml,
+  mr,
   maxW,
   w,
   h,
+  alignItems,
+  justifyContent,
   fontSize,
   textAlign,
   color,
   bg,
   borderRadius,
   boxShadow,
+  gap,
+  cols,
   className,
   ...props
 }: ITailwindComponent) => {
-  let classes = " ";
-  if (direction) classes += `${direction} `;
+  let classes = "grid ";
+  if (cols) classes += `grid-cols-${cols} `;
+  if (gap) classes += `gap-${gap} `;
   if (p) classes += `p-${p} `;
   if (px) classes += `px-${px} `;
   if (py) classes += `py-${py} `;
   if (m) classes += `m-${m} `;
   if (mx) classes += `mx-${mx} `;
-  if (mt) classes += `mt-${mt} `;
   if (my) classes += `my-${my} `;
+  if (mt) classes += `mt-${mt} `;
+  if (mb) classes += `mb-${mb} `;
+  if (ml) classes += `ml-${ml} `;
+  if (mr) classes += `mr-${mr} `;
   if (maxW) classes += `max-w-${maxW} `;
   if (w) classes += `w-${w} `;
   if (h) classes += `h-${h} `;
-  if (fontSize) classes += `font-size-${fontSize} `;
+  if (alignItems) classes += `items-${alignItems} `;
+  if (justifyContent) classes += `justify-${justifyContent} `;
+  if (fontSize) classes += `text-${fontSize} `;
   if (textAlign) classes += `text-${textAlign} `;
   if (color) classes += `text-${color} `;
   if (bg) classes += `bg-${bg} `;
   if (borderRadius) classes += `rounded-${borderRadius} `;
   if (boxShadow) classes += `shadow-${boxShadow} `;
+
   if (className) classes += `${className} `;
 
   return (
-    <button className={` ${classes} btn w-${w || 40}`} {...props}>
+    <div className={` ${classes} `} {...props}>
       {children}
-    </button>
+    </div>
   );
 };
 
-export default Button;
+export default Grid;

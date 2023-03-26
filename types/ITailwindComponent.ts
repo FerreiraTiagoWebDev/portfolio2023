@@ -4,6 +4,7 @@ export interface ITailwindComponent {
   children?: React.ReactNode;
   direction?: "flex-row" | "flex-row-reverse" | "flex-col" | "flex-col-reverse";
   alignItems?: "stretch" | "start" | "center" | "end" | "baseline";
+  cols?: any;
   p?: TTailwindMeasure;
   px?: TTailwindMeasure;
   py?: TTailwindMeasure;
@@ -12,6 +13,9 @@ export interface ITailwindComponent {
   my?: TTailwindMeasure;
   mt?: TTailwindMeasure;
   maxW?: any;
+  mb?: any;
+  ml?: any;
+  mr?: any;
   w?: TTailwindMeasure | "full";
   h?: TTailwindMeasure | string;
   justifyContent?:
@@ -43,4 +47,5 @@ export interface ITailwindComponent {
   overflow?: "auto" | "hidden" | "scroll" | "visible";
   className?: string;
   style?: React.CSSProperties;
+  onClick?: any;
 }

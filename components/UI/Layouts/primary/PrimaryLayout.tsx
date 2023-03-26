@@ -11,7 +11,7 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({ children, ...divProps }) => {
   return (
     <>
       <Head>
-        <title>Tiago Ferreira - Front End</title>
+        <title>Tiago Ferreira - Frontend</title>
       </Head>
       <div
         {...divProps}

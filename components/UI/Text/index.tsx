@@ -11,7 +11,7 @@ interface TextCustomProps {
 
 const TextCustom = ({
   children,
-  fontSize = "lg",
+  fontSize,
   fontFamily = "harmond",
   color = "black",
   textAlign,
