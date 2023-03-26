@@ -3,6 +3,7 @@ import Button from "@ui/Button";
 import FlexBox from "@ui/FlexBox";
 import H1 from "@ui/Heading";
 import H2 from "@ui/Heading/H2";
+import Link from "next/link";
 
 const HomePage = () => {
   return (
@@ -25,8 +26,12 @@ const HomePage = () => {
         <H2 align="center">Crafting engaging user experiences through code</H2>
       </Box>
       <FlexBox justifyContent="justify-around" className={"mb-10"}>
-        <Button className="m-2">About me</Button>
-        <Button className="bg-secondary m-2">Work</Button>
+        <Link href="/about" passHref>
+          <Button className="m-2">About me</Button>
+        </Link>
+        <Link href="/work" passHref>
+          <Button className="bg-secondary m-2">Work</Button>
+        </Link>
       </FlexBox>
     </FlexBox>
   );
