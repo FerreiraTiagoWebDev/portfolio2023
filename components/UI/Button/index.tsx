@@ -1,49 +1,51 @@
-import { ITailwindComponent } from "types";
+import classNames from "classnames";
+import React from "react";
 
-const Button = ({
-  children,
-  direction,
-  p,
-  px,
-  py,
-  m,
-  mx,
-  my,
-  mt,
-  maxW,
-  w,
-  h,
-  fontSize,
-  textAlign,
-  color,
-  bg,
-  borderRadius,
-  boxShadow,
+interface IButtonProps {
+  onClick?: () => void;
+  className?: string;
+  variant?: "primary" | "secondary";
+  size?: "small" | "medium" | "large";
+  children: React.ReactNode;
+}
+
+const Button: React.FC<IButtonProps> = ({
+  onClick,
   className,
-  ...props
-}: ITailwindComponent) => {
-  let classes = " ";
-  if (direction) classes += `${direction} `;
-  if (p) classes += `p-${p} `;
-  if (px) classes += `px-${px} `;
-  if (py) classes += `py-${py} `;
-  if (m) classes += `m-${m} `;
-  if (mx) classes += `mx-${mx} `;
-  if (mt) classes += `mt-${mt} `;
-  if (my) classes += `my-${my} `;
-  if (maxW) classes += `max-w-${maxW} `;
-  if (w) classes += `w-${w} `;
-  if (h) classes += `h-${h} `;
-  if (fontSize) classes += `font-size-${fontSize} `;
-  if (textAlign) classes += `text-${textAlign} `;
-  if (color) classes += `text-${color} `;
-  if (bg) classes += `bg-${bg} `;
-  if (borderRadius) classes += `rounded-${borderRadius} `;
-  if (boxShadow) classes += `shadow-${boxShadow} `;
-  if (className) classes += `${className} `;
+  variant = "primary",
+  size = "medium",
+  children,
+}) => {
+  const primaryColor =
+    "bg-blueTemplate hover:bg-blueDarkest focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-opacity-50";
+  const secondaryColor =
+    "bg-secondary hover:bg-maroon focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50";
+
+  let padding: string;
+  switch (size) {
+    case "small":
+      padding = "px-3 py-2";
+      break;
+    case "large":
+      padding = "px-8 py-4";
+      break;
+    default:
+      padding = "px-6 py-3";
+      break;
+  }
+
+  const buttonClass = classNames(
+    "inline-block rounded-md text-white font-medium",
+    padding,
+    {
+      [primaryColor]: variant === "primary",
+      [secondaryColor]: variant === "secondary",
+    },
+    className
+  );
 
   return (
-    <button className={` ${classes} btn w-${w || 40}`} {...props}>
+    <button className={buttonClass} onClick={onClick}>
       {children}
     </button>
   );

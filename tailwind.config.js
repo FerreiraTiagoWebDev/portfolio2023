@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  mode: "jit",
+  // purge:[]
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -24,8 +26,9 @@ module.exports = {
         primaryLighter: "#fdfcf8",
         primaryDarker: "#E8D9C5",
         secondary: "#4c102a",
+        maroon: "#3D0A20",
         proposedLighter: "#808080",
-        secondarLightest: "#AC9496",
+        secondaryLightest: "#AC9496",
         lightBlue: "#ADD8E6",
         black: "#070606",
         white: "#FFFDFA",

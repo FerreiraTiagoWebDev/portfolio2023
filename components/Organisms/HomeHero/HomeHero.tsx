@@ -30,7 +30,9 @@ const HomeHero = () => {
           <Button className="m-2">About me</Button>
         </Link>
         <Link href="/work" passHref>
-          <Button className="bg-secondary m-2">Work</Button>
+          <Button variant="secondary" className="m-2">
+            Work
+          </Button>
         </Link>
       </FlexBox>
       <div className="divider"></div>
