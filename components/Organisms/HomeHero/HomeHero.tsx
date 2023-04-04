@@ -8,7 +8,7 @@ import Link from "next/link";
 const HomeHero = () => {
   return (
     <FlexBox
-      className="container py-20 lg:pt-40 md:pt-24 sm:pt-20 xs:pt-20"
+      className="container py-10 lg:pt-24 md:pt-24 sm:pt-20 xs:pt-20"
       direction="flex-col"
       justifyContent="justify-center"
       alignItems="center"

@@ -1,6 +1,6 @@
+import Footer from "components/Organisms/navigation/footer/Footer";
 import SubHeader from "components/Organisms/navigation/subheader/SubHeader";
 import Head from "next/head";
-import Footer from "../../../Organisms/navigation/footer/Footer";
 import Header from "../../../Organisms/navigation/header/Header";
 
 export interface IPrimaryLayout extends React.ComponentPropsWithoutRef<"div"> {
@@ -15,12 +15,11 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({ children, ...divProps }) => {
       </Head>
       <div
         {...divProps}
-        className={`min-h-screen flex flex-col bg-primaryLighter`}
+        className={`min-h-screen max-h-screen flex flex-col bg-primaryLighter`}
       >
         <SubHeader />
         <Header />
         <main>{children}</main>
-        <div className="m-auto" />
         <Footer />
       </div>
     </>
