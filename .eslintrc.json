@@ -12,8 +12,6 @@
     }
   ],
   "rules": {
-    "no-unused-vars": [1, { "args": "after-used", "argsIgnorePattern": "^_" }],
-    "css-modules/sort-class-names": ["error", "alphanumeric"]
-  },
-  "plugins": ["css-modules"]
+    "no-unused-vars": [1, { "args": "after-used", "argsIgnorePattern": "^_" }]
+  }
 }
