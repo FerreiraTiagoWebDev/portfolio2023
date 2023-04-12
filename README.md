@@ -1,1 +1,1 @@
-Starter project ready to clone
+Essay in tailwind css while creating a new portfolio
