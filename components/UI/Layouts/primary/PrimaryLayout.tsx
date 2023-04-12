@@ -1,5 +1,4 @@
 import Footer from "components/Organisms/navigation/footer/Footer";
-import SubHeader from "components/Organisms/navigation/subheader/SubHeader";
 import Head from "next/head";
 import Header from "../../../Organisms/navigation/header/Header";
 
@@ -17,7 +16,7 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({ children, ...divProps }) => {
         {...divProps}
         className={`min-h-screen max-h-screen flex flex-col bg-primaryLighter`}
       >
-        <SubHeader />
+        {/* <SubHeader /> */}
         <Header />
         <main>{children}</main>
         <Footer />

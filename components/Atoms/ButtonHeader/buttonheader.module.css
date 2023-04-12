@@ -1,0 +1,54 @@
+.buttonHeaderDiv {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-left: 2px solid black;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+.buttonHeaderDivActive {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-left: 15px solid #842c48;
+  background-image: linear-gradient(
+    to right bottom,
+    #122b48,
+    #122b48 45%,
+    #3f6ba1 100%
+  );
+  color: white;
+  text-decoration: underline;
+  letter-spacing: 1.25px;
+}
+.buttonHeaderDiv:hover {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-left: 15px solid #842c48;
+  background-image: linear-gradient(
+    to right bottom,
+    #122b48,
+    #122b48 45%,
+    #3f6ba1 100%
+  );
+  color: white;
+  letter-spacing: 1.25px;
+}
+.buttonHeaderDiv:hover > p {
+  color: white;
+  text-shadow: 0px 0px 20px rgb(255, 255, 255);
+}
+.buttonHeaderDiv > svg {
+  transition: all 0.1s ease;
+}
+/* .buttonHeaderDiv:hover > svg {
+  font-size: 26px;
+} */
+.textButtonHeader {
+  transition: all 0.25s ease;
+  text-shadow: 17px 16px 2px rgba(136, 128, 128, 0.8);
+}
+.textButtonHeaderActive {
+  color: white;
+  text-shadow: 0px 0px 20px rgb(255, 255, 255);
+}

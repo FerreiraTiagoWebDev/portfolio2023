@@ -1,9 +1,8 @@
-import Box from "@ui/Box";
-import Button from "@ui/Button";
+import Button from "@mui/material/Button";
 import FlexBox from "@ui/FlexBox";
-import H1 from "@ui/Heading";
 import H2 from "@ui/Heading/H2";
-import Link from "next/link";
+import Link from "@ui/Link";
+import Text from "@ui/Text";
 
 const HomeHero = () => {
   return (
@@ -19,23 +18,29 @@ const HomeHero = () => {
         alignItems="center"
         direction="flex-col"
       >
-        <H1>Frontend</H1>
-        <H1>Developer</H1>
+        <Text variant="h1">Frontend</Text>
+        <Text variant="h1">Developer</Text>
       </FlexBox>
-      <Box className={"mb-10"}>
+      <FlexBox
+        className={"mb-10"}
+        alignItems="center"
+        justifyContent="justify-center"
+      >
         <H2 align="center">Crafting engaging user experiences through code</H2>
-      </Box>
-      <FlexBox justifyContent="justify-around" className={"mb-10"}>
-        <Link href="/about" passHref>
-          <Button className="m-2">About me</Button>
+      </FlexBox>
+      <FlexBox
+        justifyContent="justify-around"
+        alignItems="center"
+        className={"mb-10"}
+      >
+        <Link href="/about">
+          <Button>About me</Button>
         </Link>
-        <Link href="/work" passHref>
-          <Button variant="secondary" className="m-2">
-            Work
-          </Button>
+        <Link href="/work">
+          <Button>Work</Button>
         </Link>
       </FlexBox>
-      <div className="divider"></div>
+      <Button></Button>
     </FlexBox>
   );
 };

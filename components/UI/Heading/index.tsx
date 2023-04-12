@@ -5,9 +5,10 @@ interface H1CustomProps {
 const H1 = ({ children, align }: H1CustomProps) => {
   return (
     <div
-      className={`text-4xl lg:text-8xl md:text-7xl sm:text-7xl xs:text-6xl font-bold font-secondary break-words text-${
+      className={`text-4xl font-bold font-secondary break-words text-${
         align || "center"
-      }`}
+      } lg:text-8xl md:text-7xl sm:text-7xl xs:text-5xl `}
+      style={{ color: "#122B48" }}
     >
       {children}
     </div>
