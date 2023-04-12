@@ -15,7 +15,7 @@ export interface IHeader extends React.ComponentPropsWithoutRef<"header"> {}
 
 const useStyles = makeStyles({
   icon: {
-    fontSize: "large",
+    fontSize: "30px",
     transition: "all 0.25s ease",
     cursor: "pointer",
   },
@@ -28,7 +28,7 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
 
   const router = useRouter();
   const screenSize = useScreenSize();
-
+  console.log("screenSize", screenSize && screenSize.width);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleMobileMenu = () => {

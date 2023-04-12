@@ -6,6 +6,7 @@ function withButtonStyle<T extends ButtonProps>(
   return function ButtonWrapper(props: T) {
     const { variant, ...rest } = props;
     return (
+      //@ts-ignore
       <WrappedComponent variant={variant || "contained"} {...rest}>
         {props.children}
       </WrappedComponent>

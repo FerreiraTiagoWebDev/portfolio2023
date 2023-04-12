@@ -17,9 +17,7 @@ export const Card: React.FC<ICard> = ({ image, title, subTitle }: ICard) => {
         <h2 className="card-title">{title || "Title"}</h2>
         <p>{subTitle || "Subtitle"}</p>
         <div className="card-actions justify-end">
-          <Button size="small" variant="secondary">
-            Explore
-          </Button>
+          <Button size="small">Explore</Button>
         </div>
       </div>
     </div>

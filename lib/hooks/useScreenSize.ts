@@ -8,17 +8,19 @@ interface Size {
 
 const useScreenSize = (waitTime: number = 100): Size => {
   const [windowSize, setWindowSize] = useState<Size>({
-    width: undefined,
-    height: undefined,
+    width: 0,
+    height: 0,
   });
 
   useEffect(() => {
     const handleResize = throttle(() => {
       setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
+        width: window?.innerWidth || 0,
+        height: window?.innerHeight || 0,
       });
     }, waitTime);
+
+    handleResize();
 
     window.addEventListener("resize", handleResize);
 
