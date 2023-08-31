@@ -1,4 +1,5 @@
-import FlexBox from "@ui/Flex";
+import { Button } from "@ui/Button";
+import { Flex } from "@ui/Flex";
 import { useState } from "react";
 import { GrReactjs } from "react-icons/gr";
 import {
@@ -7,51 +8,44 @@ import {
   SiMui,
   SiRedux,
   SiStyledcomponents,
-  SiTailwindcss
+  SiTailwindcss,
 } from "react-icons/si";
 import { TbBrandNextjs, TbBrandReactNative } from "react-icons/tb";
 import ComponentIsVisible from "src/components/Atoms/ComponentIsVisible";
-import Button from "src/components/UI/Button";
 import { Card } from "src/components/UI/Card";
 
-interface HomeTechProps { }
+interface HomeTechProps {}
 
 const HomeTech: React.FC<HomeTechProps> = () => {
   const [activeCategory, setActiveCategory] = useState<number>(0);
 
   return (
-    <FlexBox
-      className="container my-10"
-      direction="flex-row"
-      justifyContent="justify-around"
-    >
-      <FlexBox
-        direction="flex-col"
-        justifyContent="justify-around"
-        className="gap-4"
-      >
+    <Flex className="container my-10 flex-col justify-around">
+      <Flex className="flex-col justify-around gap-4">
         <ul className="steps steps-vertical">
           <li
             data-content="★"
             className={`step ${activeCategory >= 0 && "step-accent"}`}
           >
-            <FlexBox alignItems="center" style={{ height: "300px" }}>
+            <Flex className="items-center" style={{ height: "300px" }}>
               <Button
-                className={`bg-${activeCategory === 0 ? "blueTemplate" : "secondary"
-                  }`}
+                className={`bg-${
+                  activeCategory === 0 ? "blueTemplate" : "secondary"
+                }`}
                 onClick={() => setActiveCategory(0)}
               >
                 Javascript Frameworks
               </Button>
-            </FlexBox>
+            </Flex>
           </li>
           <li
             data-content="★"
             className={`step ${activeCategory >= 1 && "step-accent"}`}
           >
             <Button
-              className={`bg-${activeCategory === 1 ? "blueTemplate" : "secondary"
-                }`}
+              className={`bg-${
+                activeCategory === 1 ? "blueTemplate" : "secondary"
+              }`}
               onClick={() => setActiveCategory(1)}
             >
               Css Libraries
@@ -62,18 +56,19 @@ const HomeTech: React.FC<HomeTechProps> = () => {
             className={`step ${activeCategory >= 2 && "step-accent"}`}
           >
             <Button
-              className={`bg-${activeCategory === 2 ? "blueTemplate" : "secondary"
-                }`}
+              className={`bg-${
+                activeCategory === 2 ? "blueTemplate" : "secondary"
+              }`}
               onClick={() => setActiveCategory(2)}
             >
               Utility Libraries
             </Button>
           </li>
         </ul>
-      </FlexBox>
-      <FlexBox direction="flex-col" className="justify-around items-center">
+      </Flex>
+      <Flex className="flex-col justify-around items-center">
         <ComponentIsVisible when={activeCategory === 0}>
-          <FlexBox direction="flex-col" className="justify-around items-center">
+          <Flex className="flex-col justify-around items-center">
             <Card
               title="React.js"
               subTitle="Versions: 16/17/18"
@@ -89,10 +84,10 @@ const HomeTech: React.FC<HomeTechProps> = () => {
               subTitle="Versions: 0.66"
               image={<TbBrandReactNative size={80} color="#61DAFB" />}
             />
-          </FlexBox>
+          </Flex>
         </ComponentIsVisible>
         <ComponentIsVisible when={activeCategory === 1}>
-          <FlexBox direction="flex-col" className="justify-around items-center">
+          <Flex className="flex-col justify-around items-center">
             <Card
               title="TailwindCss"
               subTitle="Versions: 2/3"
@@ -118,10 +113,10 @@ const HomeTech: React.FC<HomeTechProps> = () => {
               subTitle="Versions: 2.4"
               image={<SiDaisyui size={80} color="#7C3AED" />}
             />
-          </FlexBox>
+          </Flex>
         </ComponentIsVisible>
         <ComponentIsVisible when={activeCategory === 2}>
-          <FlexBox direction="flex-col" className="justify-around items-center">
+          <Flex className="flex-col justify-around items-center">
             <Card
               title="Redux"
               subTitle="Redux/Redux Toolkit/Redux Saga"
@@ -147,10 +142,10 @@ const HomeTech: React.FC<HomeTechProps> = () => {
               subTitle="Versions: 2.4"
               image={<SiDaisyui size={80} color="#7C3AED" />}
             />
-          </FlexBox>
+          </Flex>
         </ComponentIsVisible>
-      </FlexBox>
-    </FlexBox>
+      </Flex>
+    </Flex>
   );
 };
 
