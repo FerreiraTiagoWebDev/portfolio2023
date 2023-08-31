@@ -1,4 +1,4 @@
-import Button from "src/components/UI/Button";
+import { Button } from "..";
 
 export interface ICard {
   image: any;
@@ -17,7 +17,7 @@ export const Card: React.FC<ICard> = ({ image, title, subTitle }: ICard) => {
         <h2 className="card-title">{title || "Title"}</h2>
         <p>{subTitle || "Subtitle"}</p>
         <div className="card-actions justify-end">
-          <Button >Explore</Button>
+          <Button>Explore</Button>
         </div>
       </div>
     </div>
