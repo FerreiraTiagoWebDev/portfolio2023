@@ -36,6 +36,7 @@ module.exports = {
         blueDarkest: "#273e47",
         blueDarker: "#203A43",
         blueTemplate: "#2C5364",
+        muisecondary: "#122B48",
       },
       spacing: {
         128: "32rem",
