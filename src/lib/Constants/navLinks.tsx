@@ -25,7 +25,7 @@ export const navLinks = [
     id: 4,
     icon: <ContactMailIcon fontSize="small" />,
     text: "Contact",
-    href: "/Contact",
+    href: "/contact",
   },
 ];
 export const footerLinks = [

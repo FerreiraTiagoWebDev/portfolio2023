@@ -1,11 +1,12 @@
 import { Flex } from "@ui/Flex";
 import HomeHero from "src/components/Organisms/HomeHero/HomeHero";
+import HomeCarousel from "../Organisms/HomeCarousel/HomeCarousel";
 
 const HomePage = () => {
   return (
     <Flex className="flex-col  h-screen w-full ">
       <HomeHero />
-      {/* <HomeCarousel /> */}
+      <HomeCarousel />
     </Flex>
   );
 };

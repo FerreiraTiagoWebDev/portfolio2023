@@ -11,7 +11,7 @@ export function ComponentLoadingSpinner() {
       {/* <!-- Inner Ring --> */}
       <div
         className="w-12 h-12 rounded-full animate-spin absolute
-                        border-4 border-dashed border-primaryFixxer-one border-t-transparent"
+                        border-4 border-dashed border-maroon border-t-transparent"
       />
     </div>
   );

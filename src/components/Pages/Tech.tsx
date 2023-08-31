@@ -1,12 +1,13 @@
+import { Flex } from "@ui/Flex";
 import HomeTech from "src/components/Organisms/HomeTech/HomeTech";
 
-const Tech = () => {
+const TechPage = () => {
   return (
-    <div>
-      {" "}
+    <Flex className="flex-col  h-screen w-full ">
       <HomeTech />
-    </div>
+      <div>Tech page</div>
+    </Flex>
   );
 };
 
-export default Tech;
+export default TechPage;

@@ -1,18 +1,9 @@
+"use client";
+
 import { Button } from "@ui/Button";
 import { Flex } from "@ui/Flex";
 import { useState } from "react";
-import { GrReactjs } from "react-icons/gr";
-import {
-  SiChakraui,
-  SiDaisyui,
-  SiMui,
-  SiRedux,
-  SiStyledcomponents,
-  SiTailwindcss,
-} from "react-icons/si";
-import { TbBrandNextjs, TbBrandReactNative } from "react-icons/tb";
-import ComponentIsVisible from "src/components/Atoms/ComponentIsVisible";
-import { Card } from "src/components/UI/Card";
+// import { Card } from "src/components/UI/Card";
 
 interface HomeTechProps {}
 
@@ -66,7 +57,7 @@ const HomeTech: React.FC<HomeTechProps> = () => {
           </li>
         </ul>
       </Flex>
-      <Flex className="flex-col justify-around items-center">
+      {/* <Flex className="flex-col justify-around items-center">
         <ComponentIsVisible when={activeCategory === 0}>
           <Flex className="flex-col justify-around items-center">
             <Card
@@ -142,9 +133,9 @@ const HomeTech: React.FC<HomeTechProps> = () => {
               subTitle="Versions: 2.4"
               image={<SiDaisyui size={80} color="#7C3AED" />}
             />
-          </Flex>
-        </ComponentIsVisible>
-      </Flex>
+          </Flex> */}
+      {/* </ComponentIsVisible>
+      </Flex> */}
     </Flex>
   );
 };

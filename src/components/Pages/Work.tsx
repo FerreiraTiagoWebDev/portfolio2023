@@ -1,11 +1,11 @@
 import { Flex } from "@ui/Flex";
 
-const AboutPage = () => {
+const WorkPage = () => {
   return (
     <Flex className="flex-col  h-screen w-full ">
-      <div>About Page</div>
+      <div>work page</div>
     </Flex>
   );
 };
 
-export default AboutPage;
+export default WorkPage;

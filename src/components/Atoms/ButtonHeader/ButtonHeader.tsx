@@ -21,11 +21,9 @@ const ButtonHeader = ({
             isActive ? styles.buttonHeaderDivActive : ""
           }`}
         >
-          {/* <span style={{ color: "black" }}> */}
           {icon}
-          {/* </span> */}
           <p
-            style={{ fontWeight: "bold" }}
+            style={{ fontWeight: "bold", marginLeft: "10px" }}
             className={`${styles.textButtonHeader} ${
               isActive ? styles.textButtonHeaderActive : ""
             }`}
