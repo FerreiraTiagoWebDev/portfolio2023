@@ -3,9 +3,10 @@
   display: flex;
   align-items: center;
   padding: 8px;
-  border-left: 2px solid black;
-  background-color: #fff;
+  border-left: 2px solid #122b48;
+  background-color: #fdfcf8;
   transition: all 0.3s ease;
+  opacity: 1;
 }
 .buttonHeaderDivActive {
   border-top-right-radius: 10px;
@@ -34,21 +35,32 @@
   color: white;
   letter-spacing: 1.25px;
 }
+.buttonHeaderDiv > p {
+  color: #122b48;
+}
 .buttonHeaderDiv:hover > p {
   color: white;
   text-shadow: 0px 0px 20px rgb(255, 255, 255);
 }
 .buttonHeaderDiv > svg {
-  transition: all 0.1s ease;
+  color: #122b48;
+  transition: all 0.25s ease;
+  margin-right: 5px;
 }
-/* .buttonHeaderDiv:hover > svg {
-  font-size: 26px;
-} */
+.buttonHeaderDiv:hover > svg {
+  color: white;
+  font-size: 22px;
+}
 .textButtonHeader {
   transition: all 0.25s ease;
   text-shadow: 17px 16px 2px rgba(136, 128, 128, 0.8);
 }
+.textButtonHeader:hover {
+  color: white;
+  text-decoration: none;
+}
 .textButtonHeaderActive {
   color: white;
+  text-decoration: none;
   text-shadow: 0px 0px 20px rgb(255, 255, 255);
 }

@@ -1,54 +1,36 @@
-import classNames from 'classnames';
-import { AnchorHTMLAttributes, PropsWithChildren } from 'react';
-import { twMerge } from 'tailwind-merge';
+import { AnchorHTMLAttributes, PropsWithChildren } from "react";
 
+import { VariantProps } from "tailwind-variants";
 
-type ILinkHoverVariants = 'underline' | 'opacity' | 'none';
-type ILinkSizes = 'sm' | 'md' | 'lg';
-type ILinkVariants =
-  | 'button-primary'
-  | 'button-secondary'
-  | 'button-secondary-dark';
+import { linkStyle } from "./styles";
 
-interface ILinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
-  hoverVariant?: ILinkHoverVariants;
-  size?: ILinkSizes;
-  variant?: ILinkVariants;
+interface ILinkProps
+  extends AnchorHTMLAttributes<HTMLAnchorElement>,
+    VariantProps<typeof linkStyle> {
+  hoverVariant?: "underline" | "opacity" | "none";
 }
 
-export default function LinkCustom({
+export function Link({
   children,
   className,
-  hoverVariant = 'underline',
+  design,
+  hoverVariant = "underline",
   href,
-  size = 'md',
+  size = "md",
   target,
-  variant,
+  textTransform,
   ...rest
-  // eslint-disable-next-line no-undef
-}: PropsWithChildren<ILinkProps>): JSX.Element {
+}: // eslint-disable-next-line no-undef
+PropsWithChildren<ILinkProps>): JSX.Element {
   return (
     <a
-      className={classNames(
-        twMerge(
-          `text-white font-semibold flex items-center gap-x-2`,
-          className,
-        ),
-        {
-          'h-8 text-sm rounded-md': size === 'sm',
-          'h-10': size === 'md',
-          'h-12': size === 'lg',
-          'bg-primary-one text-white px-8 w-fit justify-center rounded-lg hover:brightness-75':
-            variant === 'button-primary',
-          'bg-secondary-one text-white px-8 w-fit justify-center rounded-lg hover:brightness-75':
-            variant === 'button-secondary',
-          'bg-secondary-two text-white px-8 w-fit justify-center rounded-lg hover:brightness-75':
-            variant === 'button-secondary-dark',
-          'hover:underline': hoverVariant === 'underline',
-          'hover:opacity-60': hoverVariant === 'opacity',
-          'hover:none': hoverVariant === 'none',
-        },
-      )}
+      className={linkStyle({
+        textTransform,
+        design,
+        hoverVariant,
+        size,
+        className,
+      })}
       href={href}
       target={target}
       {...rest}

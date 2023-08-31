@@ -1,52 +1,21 @@
-import { ITailwindComponent } from "types";
+import { HTMLAttributes, PropsWithChildren } from "react";
 
-const Box = ({
+import classNames from "classnames";
+import { twMerge } from "tailwind-merge";
+
+type IBoxProps = HTMLAttributes<HTMLDivElement>;
+
+export function Box({
   children,
-  direction,
-  p,
-  px,
-  py,
-  m,
-  mx,
-  my,
-  mt,
-  maxW,
-  w,
-  h,
-  fontSize,
-  textAlign,
-  color,
-  bg,
-  borderRadius,
-  boxShadow,
-  className,
-  ...props
-}: ITailwindComponent) => {
-  let classes = " ";
-  if (direction) classes += `${direction} `;
-  if (p) classes += `p-${p} `;
-  if (px) classes += `px-${px} `;
-  if (py) classes += `py-${py} `;
-  if (m) classes += `m-${m} `;
-  if (mx) classes += `mx-${mx} `;
-  if (mt) classes += `mt-${mt} `;
-  if (my) classes += `my-${my} `;
-  if (maxW) classes += `max-w-${maxW} `;
-  if (w) classes += `w-${w} `;
-  if (h) classes += `h-${h} `;
-  if (fontSize) classes += `font-size-${fontSize} `;
-  if (textAlign) classes += `text-${textAlign} `;
-  if (color) classes += `text-${color} `;
-  if (bg) classes += `bg-${bg} `;
-  if (borderRadius) classes += `rounded-${borderRadius} `;
-  if (boxShadow) classes += `shadow-${boxShadow} `;
-  if (className) classes += `${className} `;
-
+  className = "",
+  ...rest
+}: PropsWithChildren<IBoxProps>) {
   return (
-    <div className={` ${classes} `} {...props}>
+    <div
+      className={classNames(twMerge(`relative w-fit ${className}`))}
+      {...rest}
+    >
       {children}
     </div>
   );
-};
-
-export default Box;
+}

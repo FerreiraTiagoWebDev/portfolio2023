@@ -7,3 +7,4 @@ export * from "./Heading";
 export * from "./Layouts/primary/PrimaryLayout";
 export * from "./Link";
 export * from "./Text";
+export * from "./Utils/SVG";

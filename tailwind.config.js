@@ -2,10 +2,7 @@
 module.exports = {
   mode: "jit",
   // purge:[]
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     // Ensure these match with .storybook/preview.js
     screens: {
@@ -20,6 +17,15 @@ module.exports = {
       body: `Inter, Helvetica, Arial, sans-serif`,
     },
     extend: {
+      animation: {
+        "spin-slow": "spin 2s linear infinite",
+        "accordion-slide-down":
+          "accordion-slide-down 300ms cubic-bezier(0.87, 0, 0.13, 1)",
+        "accordion-slide-up":
+          "accordion-slide-up 300ms cubic-bezier(0.87, 0, 0.13, 1)",
+        "linear-indeterminate": "linear-indeterminate 1s infinite linear",
+        "login-background": "login-background 12s infinite",
+      },
       colors: {
         primary: "#faf5e6",
         primaryLighter: "#fdfcf8",
@@ -32,7 +38,7 @@ module.exports = {
         secondaryLightest: "#AC9496",
         lightBlue: "#ADD8E6",
         black: "#070606",
-        white: "#FFFDFA",
+        almostWhite: "#FFFDFA",
         blueDarkest: "#273e47",
         blueDarker: "#203A43",
         blueTemplate: "#2C5364",
