@@ -1,18 +1,37 @@
-interface H1CustomProps {
-  children?: React.ReactNode;
-  align?: string;
+import classNames from "classnames";
+import { HTMLAttributes, PropsWithChildren } from "react";
+import { twMerge } from "tailwind-merge";
+
+type IHeadingVariants = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+
+interface IHeadingProps extends HTMLAttributes<HTMLHeadingElement> {
+  variant?: IHeadingVariants;
+  gradientText?: boolean;
 }
-const H1 = ({ children, align }: H1CustomProps) => {
+
+export function Heading({
+  children,
+  className,
+  variant: HeadingTag = "h1",
+  gradientText = false,
+  ...rest
+}: // eslint-disable-next-line no-undef
+PropsWithChildren<IHeadingProps>): JSX.Element {
   return (
-    <div
-      className={`text-4xl font-bold font-secondary break-words text-${
-        align || "center"
-      } lg:text-8xl md:text-7xl sm:text-7xl xs:text-5xl `}
-      style={{ color: "#122B48" }}
+    <HeadingTag
+      className={classNames(
+        twMerge(
+          `font-inter font-bold text-2xl ${
+            gradientText
+              ? "bg-clip-text text-transparent bg-gradient-to-br from-muisecondary via-muisecondary to-muithird"
+              : "font-extrabold text-secondary-two text-2xl"
+          }`,
+          className
+        )
+      )}
+      {...rest}
     >
       {children}
-    </div>
+    </HeadingTag>
   );
-};
-
-export default H1;
+}

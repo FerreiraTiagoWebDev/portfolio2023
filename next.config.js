@@ -2,6 +2,7 @@
 const withPlugins = require("next-compose-plugins");
 const withReactSvg = require("next-react-svg");
 const path = require("path");
+const withVideos = require("next-videos");
 
 const nextConfig = {
   webpack(config) {
@@ -21,6 +22,10 @@ const nextConfig = {
 
 module.exports = withPlugins(
   [
+    withVideos,
+    {
+      include: path.resolve(__dirname, "assets/videos"),
+    },
     [
       withReactSvg,
       {

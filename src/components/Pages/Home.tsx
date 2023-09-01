@@ -4,7 +4,7 @@ import HomeCarousel from "../Organisms/HomeCarousel/HomeCarousel";
 
 const HomePage = () => {
   return (
-    <Flex className="flex-col  h-screen w-full ">
+    <Flex className="flex-col  w-full ">
       <HomeHero />
       <HomeCarousel />
     </Flex>

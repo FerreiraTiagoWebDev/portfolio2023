@@ -43,6 +43,13 @@ module.exports = {
         blueDarker: "#203A43",
         blueTemplate: "#2C5364",
         muisecondary: "#122B48",
+        muithird: "#3F6BA1",
+        h1HomePage:
+          "linear-gradient(to right bottom, #122B48, #122B48 45%, #3F6BA1 100%)",
+      },
+      backgroundImage: {
+        "h1-gradient":
+          "linear-gradient(to right bottom, #122B48, #122B48 45%, #3F6BA1 100%)",
       },
       spacing: {
         128: "32rem",
