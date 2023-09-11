@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.className}>
-      <body className="min-h-screen bg-primaryLighter">
+      <body className="bg-primaryLighter relative border-6 border-muisecondary">
         <Header />
         <main role="role">{children}</main>
         <Footer />

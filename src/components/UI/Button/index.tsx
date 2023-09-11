@@ -12,6 +12,7 @@ export interface IButtonProps
     VariantProps<typeof buttonStyle> {
   isLoading?: boolean;
   loaderColor?: string;
+  hoverVariant?: "opacity" | "underline" | "none";
 }
 
 export function Button({
@@ -19,6 +20,7 @@ export function Button({
   className,
   design,
   isLoading = false,
+  hoverVariant,
   loaderColor = "#FFF",
   size,
   textTransform,
@@ -30,6 +32,7 @@ PropsWithChildren<IButtonProps>): JSX.Element {
     <button
       className={buttonStyle({
         size,
+        hoverVariant,
         design,
         textTransform,
         className,

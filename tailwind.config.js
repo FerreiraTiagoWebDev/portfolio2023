@@ -19,12 +19,19 @@ module.exports = {
     extend: {
       animation: {
         "spin-slow": "spin 2s linear infinite",
+        "move-right": "move-right 6s linear infinite",
         "accordion-slide-down":
           "accordion-slide-down 300ms cubic-bezier(0.87, 0, 0.13, 1)",
         "accordion-slide-up":
           "accordion-slide-up 300ms cubic-bezier(0.87, 0, 0.13, 1)",
         "linear-indeterminate": "linear-indeterminate 1s infinite linear",
         "login-background": "login-background 12s infinite",
+      },
+      keyframes: {
+        "move-right": {
+          "0%": { transform: "translateX(0)", opacity: 1 },
+          "100%": { transform: "translateX(100%)", opacity: 0 },
+        },
       },
       colors: {
         primary: "#faf5e6",
@@ -44,8 +51,6 @@ module.exports = {
         blueTemplate: "#2C5364",
         muisecondary: "#122B48",
         muithird: "#3F6BA1",
-        h1HomePage:
-          "linear-gradient(to right bottom, #122B48, #122B48 45%, #3F6BA1 100%)",
       },
       backgroundImage: {
         "h1-gradient":
@@ -66,15 +71,4 @@ module.exports = {
       center: true,
     },
   },
-  // plugins: [require("daisyui")],
-  // daisyui: {
-  //   styled: true,
-  //   themes: true,
-  //   base: true,
-  //   utils: true,
-  //   logs: true,
-  //   rtl: false,
-  //   prefix: "",
-  //   darkTheme: "dark",
-  // },
 };

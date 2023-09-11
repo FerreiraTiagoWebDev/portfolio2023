@@ -6,10 +6,10 @@ import { Flex } from "@ui/Flex";
 import { Grid } from "@ui/Grid";
 import { Link } from "@ui/Link";
 import { Text } from "@ui/Text";
-import { AiFillLinkedin, AiFillPhone } from "react-icons/ai";
-import { FcDocument } from "react-icons/fc";
+import { AiFillGithub, AiFillLinkedin, AiFillPhone } from "react-icons/ai";
+import { BsDownload } from "react-icons/bs";
 import { MdEmail, MdLocationOn } from "react-icons/md";
-import { LINKEDIN_URL } from "src/lib/Constants/outsideNavigation";
+import { GITHUB_URL, LINKEDIN_URL } from "src/lib/Constants/outsideNavigation";
 
 export interface IFooter extends React.ComponentPropsWithoutRef<"footer"> {}
 
@@ -18,15 +18,18 @@ const Footer: React.FC<IFooter> = ({ ...footerProps }) => {
     <footer
       {...footerProps}
       style={{
+        // position: "absolute",
+        // bottom: 0,
+        width: "100%",
         borderWidth: "15px",
         borderTop: "15px solid #122B48",
       }}
     >
       <Container>
-        <Grid className="w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-4  items-center justify-center pt-4 pb-2  border-b-2">
+        <Grid className="w-full grid-cols-2 sm:grid-cols-2 md:grid-cols-4  items-center justify-center pt-4 pb-2  border-b-2">
           <Link
             href={"mailto:tiagofqaferreira@gmail.com"}
-            className="flex items-center justify-center p-1"
+            className="flex flex-col md:flex-row items-center justify-center p-1"
             hoverVariant="opacity"
             textTransform="lowercase"
           >
@@ -37,7 +40,7 @@ const Footer: React.FC<IFooter> = ({ ...footerProps }) => {
           </Link>
           <Link
             href={"tel:+32494846838"}
-            className="flex items-center justify-center p-1"
+            className="flex flex-col md:flex-row items-center justify-center p-1"
             hoverVariant="opacity"
           >
             <AiFillPhone size={24} color="#1C486B" />
@@ -49,27 +52,35 @@ const Footer: React.FC<IFooter> = ({ ...footerProps }) => {
             href={"/assets/cv/curriculum.pdf"}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-center p-1"
+            className="flex flex-col md:flex-row items-center justify-center p-1"
             hoverVariant="opacity"
             download="document.pdf"
           >
-            <FcDocument size={24} />
+            <BsDownload size={24} color="#1C486B" />
             <Text variant="small" className="ml-1">
               Curriculum
             </Text>
           </Link>
-          <Link
-            href={LINKEDIN_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center justify-center p-1"
-            hoverVariant="opacity"
-          >
-            <AiFillLinkedin size={24} color="#0A66C2" />
-            <Text variant="small" className="ml-1">
-              LinkedIn
-            </Text>
-          </Link>
+          <Flex className="items-center justify-center">
+            <Link
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center justify-center p-1"
+              hoverVariant="opacity"
+            >
+              <AiFillLinkedin size={30} color="#0A66C2" />
+            </Link>
+            <Link
+              href={GITHUB_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center justify-center p-1"
+              hoverVariant="opacity"
+            >
+              <AiFillGithub size={30} />
+            </Link>
+          </Flex>
         </Grid>
         <Flex className="w-full items-center justify-center gap-4 py-1">
           <Box className="flex items-center">

@@ -4,7 +4,7 @@
   overflow: hidden;
   width: 100%;
   /* test */
-  height: 10vh;
+  height: 75px;
   /* background-color: #fcf4db52; */
   background-image: linear-gradient(
     to right bottom,
@@ -32,7 +32,7 @@
   justify-content: center;
   gap: 2rem;
   min-width: 100%;
-  animation: scroll-left 30s linear infinite;
+  animation: scroll-left 40s linear infinite;
 }
 .marquee-tag-wrapper {
   text-decoration: none;
@@ -67,7 +67,9 @@
 .marquee-tag-wrapper:hover .marquee-tag-icon {
   opacity: 1;
 }
-
+.paused-marquee-group {
+  animation-play-state: paused;
+}
 @keyframes scroll-left {
   from {
     transform: translateX(0);

@@ -39,7 +39,7 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
   return (
     <header className="w-full" {...headerProps}>
       <Flex
-        className="w-full items-center p-6"
+        className="w-full items-center p-2 md:p-4"
         style={{
           borderBottom: "15px solid #122B48",
           borderWidth: "15px",
@@ -47,15 +47,18 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
         }}
       >
         <Box className="w-full flex-40">
-          <NextLink buttonDesign="none" href="/" className="w-full grow-0">
-            <Box className="rounded-md px-1 ">
+          <Box className="rounded-md px-1 ">
+            <NextLink buttonDesign="none" href="/" className="px-2">
               <CubeLogo />
-            </Box>
-          </NextLink>
+            </NextLink>
+          </Box>
         </Box>
 
         <ComponentIsVisible when={!!screenSize.width && screenSize.width < 768}>
-          <Flex onClick={() => handleMobileMenu()}>
+          <Flex
+            className="items-center justify-end px-4"
+            onClick={() => handleMobileMenu()}
+          >
             {mobileMenuOpen ? (
               <MenuOpenIcon className={classes.icon} />
             ) : (
