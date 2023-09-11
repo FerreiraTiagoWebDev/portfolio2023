@@ -1,7 +1,7 @@
 import { tv } from "tailwind-variants";
 
 export const linkStyle = tv({
-  base: "text-white font-semibold flex items-center gap-x-2",
+  base: "font-semibold flex items-center gap-x-2",
   variants: {
     textTransform: {
       uppercase: "uppercase",

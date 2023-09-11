@@ -22,14 +22,14 @@ const HomeHero = () => {
     <Flex className="flex-col container py-10 lg:pt-20 md:pt-18 sm:pt-18 xs:pt-20 ">
       <Flex className={"relative flex-col items-center justify-center mb-12"}>
         <Heading
-          gradientText
-          className=" text-9xl text-center border-r-8 rounded-br-2xl rounded-tr-2xl pr-2"
+          gradient="primary"
+          className="text-5xl lg:text-9xl md:text-7xl sm:text-6xl text-center border-r-8 rounded-br-2xl rounded-tr-2xl pr-2"
         >
           Frontend
         </Heading>
         <Heading
-          gradientText
-          className="text-9xl text-center border-r-8 rounded-br-2xl rounded-tr-2xl pr-4"
+          gradient="primary"
+          className="text-5xl lg:text-9xl md:text-7xl sm:text-6xl text-center border-r-8 rounded-br-2xl rounded-tr-2xl pr-2"
         >
           Developer
         </Heading>
@@ -56,7 +56,7 @@ const HomeHero = () => {
         </ComponentIsVisible>
       </Flex>
       <Flex className={"mb-12 justify-center"}>
-        <Heading gradientText className="text-2xl font-semibold relative">
+        <Heading gradient="primary" className="text-2xl font-semibold relative">
           Crafting engaging user experiences through code
           <span
             className="absolute inset-0 text-transparent text-shadow"
@@ -66,7 +66,7 @@ const HomeHero = () => {
               zIndex: -1,
             }}
           >
-            Crafting engaging spaghetti through code
+            Crafting broken user experiences through code
           </span>
         </Heading>
       </Flex>
