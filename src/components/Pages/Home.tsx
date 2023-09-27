@@ -1,13 +1,12 @@
-import { Flex } from "@ui/Flex";
+import { Container } from "@ui/layout";
 import HomeHero from "src/components/Organisms/HomeHero/HomeHero";
-import HomeCarousel from "../Organisms/HomeCarousel/HomeCarousel";
 
 const HomePage = () => {
   return (
-    <Flex className="flex-col w-full">
+    // 100vh - (header 10vh-30px + footer 10vh-30px + carousel 5vh) = 75vh
+    <Container className="h-[75vh] w-full my-auto">
       <HomeHero />
-      <HomeCarousel />
-    </Flex>
+    </Container>
   );
 };
 

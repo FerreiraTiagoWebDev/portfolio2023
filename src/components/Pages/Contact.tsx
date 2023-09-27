@@ -1,4 +1,4 @@
-import { Flex } from "@ui/Flex";
+import { Flex } from "@ui/layout";
 
 const ContactPage = () => {
   return (

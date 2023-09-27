@@ -1,12 +1,12 @@
 import { HTMLAttributes, PropsWithChildren } from 'react';
-import { twMerge } from 'tailwind-merge';
 
+import { twMerge } from 'tailwind-merge';
 
 type IFlexProps = HTMLAttributes<HTMLDivElement>;
 
 export function Flex({
   children,
-  className = '',
+  className,
   ...rest
 }: PropsWithChildren<IFlexProps>) {
   return (

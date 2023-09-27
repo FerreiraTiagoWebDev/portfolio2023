@@ -1,10 +1,11 @@
-import { Flex } from "@ui/Flex";
+import { Container } from "@ui/Container";
+import { Grid } from "@ui/layout";
 
 const AboutPage = () => {
   return (
-    <Flex className="flex-col  h-screen w-full ">
-      <div>About Page</div>
-    </Flex>
+    <Container>
+      <Grid className="container">test2</Grid>
+    </Container>
   );
 };
 

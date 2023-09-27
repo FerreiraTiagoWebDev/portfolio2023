@@ -3,9 +3,7 @@
   align-content: center;
   overflow: hidden;
   width: 100%;
-  /* test */
-  height: 75px;
-  /* background-color: #fcf4db52; */
+  height: 5vh;
   background-image: linear-gradient(
     to right bottom,
     #122b48,

@@ -1,4 +1,4 @@
-import { Flex } from "@ui/Flex";
+import { Flex } from "@ui/layout";
 import { ComponentLoadingSpinner } from "src/components/Atoms/LoadingSpinner";
 
 export default function Loading() {

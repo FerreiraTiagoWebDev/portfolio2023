@@ -1,15 +1,13 @@
 "use client";
 
-import { Box } from "@ui/Box";
 import { Button } from "@ui/Button";
-import { Flex } from "@ui/Flex";
 import { Heading } from "@ui/Heading";
 import { NextLink } from "@ui/NextLink";
 import { Text } from "@ui/Text";
+import { Box, Container, Flex } from "@ui/layout";
 import { useEffect, useState } from "react";
 import ComponentIsVisible from "src/components/Atoms/ComponentIsVisible";
 import useScreenSize from "src/lib/hooks/useScreenSize";
-
 const HomeHero = () => {
   const [hasVideoPlayed, setHasVideoPlayed] = useState(false);
   const screenSize = useScreenSize();
@@ -22,7 +20,7 @@ const HomeHero = () => {
   }, []);
 
   return (
-    <Flex className="flex-col container pt-12 sm:pt-14 md:pt-16 lg:pt-22 pb-8 sm:pb-10 md:pb-12 lg:pb-14">
+    <Container className="flex flex-col items-center justify-center h-full">
       <Flex className={"relative flex-col items-center justify-center mb-12"}>
         <Heading
           gradient="primary"
@@ -88,7 +86,7 @@ const HomeHero = () => {
           </Button>
         </NextLink>
       </Flex>
-    </Flex>
+    </Container>
   );
 };
 

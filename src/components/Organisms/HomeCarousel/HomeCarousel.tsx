@@ -1,15 +1,14 @@
 "use client";
 
-import { Flex } from "@ui/Flex";
+import { Flex } from "@ui/layout";
 import Link from "next/link";
 import { useState } from "react";
 import { HOME_TECH_SLIDER_LOGOS } from "src/lib/Constants/constants";
 import styles from "./HomeCarousel.module.css";
-
 function HomeCarousel() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   return (
-    <Flex className="flex-col items-center justify-center py-4">
+    <Flex className="flex-col items-center justify-center">
       <div className={styles.container}>
         <div className={styles["marquee-wrapper"]}>
           <div className={styles["marquee"]}>

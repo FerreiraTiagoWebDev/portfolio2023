@@ -3,9 +3,8 @@
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import { makeStyles } from "@mui/styles";
-import { Box } from "@ui/Box";
-import { Flex } from "@ui/Flex";
 import { NextLink } from "@ui/NextLink";
+import { Box, Flex } from "@ui/layout";
 import { usePathname } from "next/navigation";
 import { CubeLogo } from "public/assets/icons";
 import { useState } from "react";
@@ -37,7 +36,11 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
   return (
-    <header className="w-full" {...headerProps}>
+    <header
+      className="w-full"
+      {...headerProps}
+      style={{ height: "calc(10vh - 30px)" }}
+    >
       <Flex
         className="w-full items-center p-2 md:p-4"
         style={{

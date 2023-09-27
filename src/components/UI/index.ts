@@ -1,10 +1,11 @@
-export * from "./Box";
 export * from "./Button";
 export * from "./Card";
-export { Container } from "./Container";
-export * from "./Flex";
+export * from "./Container";
 export * from "./Heading";
-export * from "./Layouts/primary/PrimaryLayout";
 export * from "./Link";
 export * from "./Text";
 export * from "./Utils/SVG";
+
+export { Article, Box, Container, Flex, Grid, Section } from "./layout";
+
+export { SVGContainer } from "./Utils";

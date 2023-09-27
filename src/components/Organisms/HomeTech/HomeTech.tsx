@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@ui/Button";
-import { Flex } from "@ui/Flex";
+import { Flex } from "@ui/layout";
 import { useState } from "react";
 // import { Card } from "src/components/UI/Card";
 

@@ -1,4 +1,4 @@
-import { Flex } from "@ui/Flex";
+import { Flex } from "@ui/layout";
 import HomeTech from "src/components/Organisms/HomeTech/HomeTech";
 
 const TechPage = () => {
