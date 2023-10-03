@@ -17,17 +17,15 @@ const Footer: React.FC<IFooter> = ({ ...footerProps }) => {
     <footer
       {...footerProps}
       style={{
-        // position: "absolute",
-        // bottom: 0,
         width: "100%",
         borderWidth: "15px",
         borderTop: "15px solid #122B48",
       }}
     >
-      <Grid className="w-full grid-cols-2 sm:grid-cols-2 md:grid-cols-4  items-center justify-center pt-4 pb-2 border-b-2 h-[6vh]">
+      <Grid className="w-[100%] sm:w-[90%] md:w-[80%] lg:w-[70%] h-[15vh] md:h-[6vh] m-auto grid-cols-2 sm:grid-cols-2 md:grid-cols-4  items-center justify-center pt-4 pb-2 border-b-2 ">
         <Link
           href={"mailto:tiagofqaferreira@gmail.com"}
-          className="flex flex-col md:flex-row items-center justify-center"
+          className="flex flex-col lg:flex-row items-center justify-center"
           hoverVariant="opacity"
           textTransform="lowercase"
         >

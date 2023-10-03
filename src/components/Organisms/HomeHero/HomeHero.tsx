@@ -11,10 +11,17 @@ import useScreenSize from "src/lib/hooks/useScreenSize";
 const HomeHero = () => {
   const [hasVideoPlayed, setHasVideoPlayed] = useState(false);
   const screenSize = useScreenSize();
+
   useEffect(() => {
-    setTimeout(() => {
+    const hasPlayed = localStorage.getItem("hasVideoPlayed");
+    if (hasPlayed) {
       setHasVideoPlayed(true);
-    }, 5000);
+    } else {
+      setTimeout(() => {
+        setHasVideoPlayed(true);
+        localStorage.setItem("hasVideoPlayed", "true");
+      }, 5000);
+    }
 
     return () => {};
   }, []);
@@ -24,13 +31,13 @@ const HomeHero = () => {
       <Flex className={"relative flex-col items-center justify-center mb-12"}>
         <Heading
           gradient="primary"
-          className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-center border-r-8 rounded-br-2xl rounded-tr-2xl pr-2"
+          className="text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-center border-r-8 rounded-br-2xl rounded-tr-2xl pr-2"
         >
           Frontend
         </Heading>
         <Heading
           gradient="primary"
-          className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-center border-r-8 rounded-br-2xl rounded-tr-2xl pr-2"
+          className="text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-center border-r-8 rounded-br-2xl rounded-tr-2xl pr-2"
         >
           Developer
         </Heading>
@@ -60,12 +67,12 @@ const HomeHero = () => {
         </ComponentIsVisible>
       </Flex>
       <Flex className={"mb-12 justify-center"}>
-        <Heading variant="h2" gradient="primary" className="relative">
+        <Heading variant="h2" gradient="primary" className="relative text-md">
           Crafting engaging user experiences
           <span
             className="absolute inset-0 text-transparent text-shadow"
             style={{
-              textShadow: "40px 30px 3px rgba(136, 128, 128, 0.8)",
+              textShadow: "35px 30px 3px rgba(136, 128, 128, 0.8)",
               textDecoration: "line-through",
               zIndex: -1,
             }}

@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   padding: 10px;
+  height: 40px;
   border-left: 2px solid #122b48;
   background-color: #fdfcf8;
   transition: all 0.3s ease;
@@ -11,7 +12,7 @@
 .buttonHeaderDivActive {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  border-left: 15px solid #842c48;
+  border-left: 10px solid #842c48;
   background-image: linear-gradient(
     to right bottom,
     #122b48,
@@ -20,7 +21,7 @@
   );
   color: white;
   text-decoration: underline;
-  letter-spacing: 1.25px;
+  letter-spacing: 1.15px;
 }
 
 .buttonHeaderDiv:hover {

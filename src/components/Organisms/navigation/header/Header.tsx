@@ -12,6 +12,7 @@ import ButtonHeader from "src/components/Atoms/ButtonHeader/ButtonHeader";
 import ComponentIsVisible from "src/components/Atoms/ComponentIsVisible";
 import { navLinks } from "src/lib/Constants/navLinks";
 import useScreenSize from "src/lib/hooks/useScreenSize";
+import MobileMenu from "../MobileMenu";
 
 export interface IHeader extends React.ComponentPropsWithoutRef<"header"> {}
 
@@ -87,6 +88,7 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
           </Flex>
         </ComponentIsVisible>
       </Flex>
+      <MobileMenu isOpen={mobileMenuOpen} handleOpen={setMobileMenuOpen} />
     </header>
   );
 };

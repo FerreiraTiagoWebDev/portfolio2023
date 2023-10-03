@@ -9,7 +9,7 @@ export const textStyle = tv({
       span: "text-base sm:text-sm md:text-md lg:text-lg",
       label: "text-base sm:text-sm md:text-md lg:text-lg",
       b: "text-base sm:text-sm md:text-md lg:text-lg",
-      small: "text-xs sm:text-sm md:text-sm lg:text-sm",
+      small: "text-xs sm:text-xs md:text-sm lg:text-sm",
     },
   },
   defaultVariants: {
