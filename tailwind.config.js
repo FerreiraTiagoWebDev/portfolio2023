@@ -51,6 +51,7 @@ module.exports = {
         blueTemplate: "#2C5364",
         muisecondary: "#122B48",
         muithird: "#3F6BA1",
+        jaimy: "#C21426",
       },
       backgroundImage: {
         "h1-gradient":

@@ -1,5 +1,5 @@
 import { Container } from "@ui/layout";
-import HomeHero from "src/components/Organisms/HomeHero/HomeHero";
+import HomeHero from "../Organisms/Home/HomeHero/HomeHero";
 
 const HomePage = () => {
   return (

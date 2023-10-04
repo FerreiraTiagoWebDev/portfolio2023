@@ -21,7 +21,7 @@ const MobileMenu = ({ isOpen, handleOpen }: IMobileMenu) => {
       )}
       style={{
         backgroundImage:
-          "linear-gradient(to bottom, #faf5e6dd, #fdfcf8, #E8D9C5, #273e4755, #203a435a, #2c53646c)",
+          "linear-gradient(to bottom, #faf5e6dd, #fdfcf8, #E8D9C5, #273e4755, #203a435a, #3068806c)",
         transition: "transform 0.3s ease-in-out",
       }}
     >

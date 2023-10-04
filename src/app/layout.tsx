@@ -21,7 +21,9 @@ export default function RootLayout({
     <html lang="en" className={inter.className}>
       <body className="bg-primaryLighter relative border-6 border-muisecondary">
         <Header />
-        <main role="role">{children}</main>
+        <main role="role" id={"mainId"}>
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
