@@ -53,7 +53,7 @@ export default function AboutMeTimeline() {
                 backgroundImage: item.extraStyling,
               }}
             >
-              <Text className="bold">{item.dotText}</Text>
+              <Text className="font-bold">{item.dotText}</Text>
             </TimelineDot>
             <TimelineConnector />
           </TimelineSeparator>
