@@ -58,7 +58,9 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
           </Box>
         </Box>
 
-        <ComponentIsVisible when={!!screenSize.width && screenSize.width < 768}>
+        <ComponentIsVisible
+          when={!screenSize || (!!screenSize.width && screenSize.width < 768)}
+        >
           <Flex
             className="items-center justify-end px-4"
             onClick={() => handleMobileMenu()}

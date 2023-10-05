@@ -40,7 +40,7 @@ export default function AboutMeTimeline() {
   return (
     <Timeline
       position="alternate"
-      className="bg-slate-100 my-8"
+      className="bg-slate-100 my-8 p-2 md:p-8"
       sx={{
         border: "4px  #273e47",
         borderRadius: "25px",
@@ -55,11 +55,13 @@ export default function AboutMeTimeline() {
         >
           <TimelineItem
             onClick={() => handleClick(item)}
-            className="relative"
+            className={classNames(``, {
+              "bg-slate-200 shadow-lg": isItemClickable(item),
+            })}
             sx={
               isItemClickable(item)
                 ? {
-                    my: 3,
+                    my: 1,
                     cursor: "pointer",
                     transition: "0.2s ease all",
                     borderRadius: "10px",
@@ -68,7 +70,7 @@ export default function AboutMeTimeline() {
                     },
                   }
                 : {
-                    my: 3,
+                    my: 1,
                     borderRadius: "10px",
                   }
             }
