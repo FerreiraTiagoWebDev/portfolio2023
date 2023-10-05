@@ -2,7 +2,7 @@ import { Container } from "@ui/Container";
 import { Heading } from "@ui/Heading";
 import { Text } from "@ui/Text";
 import { Flex } from "@ui/layout";
-import AboutMeTimeline from "../Organisms/About/AboutMeTimeline";
+import AboutMeTimeline from "../Organisms/About/Timeline/AboutMeTimeline";
 
 const AboutPage = () => {
   return (
@@ -14,8 +14,8 @@ const AboutPage = () => {
             Portuguese Speech Therapist turned Web Developer in 2021.
           </Text>
           <Text variant="p" className="text-justify">
-            I feel grateful for the path I have taken so far, but strive to
-            achieve more.
+            I feel grateful for the path I have taken so far, and strive to
+            learn more!
           </Text>
         </Flex>
         <AboutMeTimeline />

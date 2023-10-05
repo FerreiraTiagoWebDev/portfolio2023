@@ -67,12 +67,16 @@ const HomeHero = () => {
         </ComponentIsVisible>
       </Flex>
       <Flex className={"mb-12 justify-center"}>
-        <Heading variant="h2" gradient="primary" className="relative text-md">
+        <Heading
+          variant="h2"
+          gradient="primary"
+          className="relative text-md py-1"
+        >
           Crafting engaging user experiences
           <span
             className="absolute inset-0 text-transparent text-shadow"
             style={{
-              textShadow: "35px 30px 3px rgba(136, 128, 128, 0.8)",
+              textShadow: "37px 34px 3px rgba(136, 128, 128, 0.8)",
               textDecoration: "line-through",
               zIndex: -1,
             }}
