@@ -21,10 +21,10 @@ import ComponentIsVisible from "src/components/Atoms/ComponentIsVisible";
 import { JAIMY_PROJECTS } from "src/lib/Constants/projects";
 
 export default function Jaimy() {
-  const [open, setOpen] = React.useState(true);
+  const [openProjectList, setOpenProjectList] = React.useState(true);
 
-  const handleClickFood = () => {
-    setOpen(!open);
+  const handleOpenProjects = () => {
+    setOpenProjectList(!openProjectList);
   };
 
   return (
@@ -71,16 +71,16 @@ export default function Jaimy() {
       </a>
 
       {/* PROJECTS */}
-      <ListItemButton onClick={handleClickFood}>
+      <ListItemButton onClick={handleOpenProjects}>
         <ListItemIcon>
           <WorkIcon />
         </ListItemIcon>
         <ListItemText
           primary={<Text className="font-semibold">{"Projects"}</Text>}
         />
-        {open ? <ExpandLess /> : <ExpandMore />}
+        {openProjectList ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
-      <Collapse in={open} timeout="auto" unmountOnExit>
+      <Collapse in={openProjectList} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           {/* JAIMY WEBSITE */}
 
@@ -103,7 +103,13 @@ export default function Jaimy() {
                         href={project.externalHref}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full flex flex-row items-center justify-between"
+                        className={classNames(
+                          `w-full flex flex-row items-center justify-between`,
+                          {
+                            "pointer-events-none":
+                              project.privacy === "private",
+                          }
+                        )}
                       >
                         <ComponentIsVisible when={project.privacy === "public"}>
                           <OpenInNewIcon />
@@ -117,15 +123,8 @@ export default function Jaimy() {
                       </a>
                     </Button>
                     <Button design="outline" className="w-[150px]">
-                      <a
-                        href={project.externalHref}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-full flex flex-row items-center justify-between"
-                      >
-                        <VisibilityIcon sx={{ mr: 1 }} />
-                        <Text variant="small">Tech</Text>
-                      </a>
+                      <VisibilityIcon sx={{ mr: 1 }} />
+                      <Text variant="small">Tech</Text>
                     </Button>
                   </Flex>
                 }

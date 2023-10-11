@@ -1,0 +1,42 @@
+import { InputHTMLAttributes } from 'react';
+
+import classNames from 'classnames';
+import { twMerge } from 'tailwind-merge';
+
+import { FieldBase, IFieldBaseProps } from '../Base';
+
+export interface IDateFieldProps
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
+  containerProps?: IFieldBaseProps;
+}
+
+export function DateField({
+  className,
+  containerProps,
+  disabled = false,
+  name,
+  readOnly = false,
+  ...rest
+}: IDateFieldProps): JSX.Element {
+  return (
+    <FieldBase {...containerProps}>
+      <input
+        className={classNames(
+          twMerge(
+            'bg-transparent flex flex-1 h-full min-w-fit w-full max-w-full text-sm text-gray-800 data-[placeholder]:text-sm focus-visible:outline-0',
+            className,
+          ),
+          {
+            'disabled:cursor-not-allowed disabled:text-gray-700 read-only:cursor-not-allowed read-only:text-gray-700':
+              disabled || readOnly,
+          },
+        )}
+        disabled={disabled}
+        name={name}
+        readOnly={readOnly}
+        type="date"
+        {...rest}
+      />
+    </FieldBase>
+  );
+}

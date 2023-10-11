@@ -38,58 +38,52 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
   };
   return (
     <header
-      className="w-full"
       {...headerProps}
-      style={{ height: "calc(10vh - 30px)" }}
+      className="w-full items-center p-2 md:p-4"
+      style={{
+        borderBottom: "15px solid #122B48",
+        borderWidth: "15px",
+        display: "flex",
+        height: "10vh",
+      }}
     >
-      <Flex
-        className="w-full items-center p-2 md:p-4"
-        style={{
-          borderBottom: "15px solid #122B48",
-          borderWidth: "15px",
-          display: "flex",
-        }}
-      >
-        <Box className="w-full flex-40">
-          <Box className="rounded-md px-1 ">
-            <NextLink buttonDesign="none" href="/" className="px-2">
-              <CubeLogo />
-            </NextLink>
-          </Box>
+      <Box className="w-full flex-40">
+        <Box className="rounded-md px-1 ">
+          <NextLink buttonDesign="none" href="/" className="px-2">
+            <CubeLogo />
+          </NextLink>
         </Box>
+      </Box>
 
-        <ComponentIsVisible
-          when={!screenSize || (!!screenSize.width && screenSize.width < 768)}
+      <ComponentIsVisible
+        when={!screenSize || (!!screenSize.width && screenSize.width < 768)}
+      >
+        <Flex
+          className="items-center justify-end px-4"
+          onClick={() => handleMobileMenu()}
         >
-          <Flex
-            className="items-center justify-end px-4"
-            onClick={() => handleMobileMenu()}
-          >
-            {mobileMenuOpen ? (
-              <MenuOpenIcon className={classes.icon} />
-            ) : (
-              <MenuIcon className={classes.icon} />
-            )}
-          </Flex>
-        </ComponentIsVisible>
-        <ComponentIsVisible
-          when={!!screenSize.width && screenSize.width >= 768}
-        >
-          <Flex className="w-full flex-row justify-around flex-60">
-            {navLinks.map((item) => {
-              return (
-                <ButtonHeader
-                  key={item.id}
-                  href={item.href}
-                  icon={item.icon}
-                  text={item.text}
-                  isActive={pathname.includes(item.text.toLowerCase())}
-                />
-              );
-            })}
-          </Flex>
-        </ComponentIsVisible>
-      </Flex>
+          {mobileMenuOpen ? (
+            <MenuOpenIcon className={classes.icon} />
+          ) : (
+            <MenuIcon className={classes.icon} />
+          )}
+        </Flex>
+      </ComponentIsVisible>
+      <ComponentIsVisible when={!!screenSize.width && screenSize.width >= 768}>
+        <Flex className="w-full flex-row justify-around flex-60">
+          {navLinks.map((item) => {
+            return (
+              <ButtonHeader
+                key={item.id}
+                href={item.href}
+                icon={item.icon}
+                text={item.text}
+                isActive={pathname.includes(item.text.toLowerCase())}
+              />
+            );
+          })}
+        </Flex>
+      </ComponentIsVisible>
       <MobileMenu isOpen={mobileMenuOpen} handleOpen={setMobileMenuOpen} />
     </header>
   );

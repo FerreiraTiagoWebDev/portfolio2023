@@ -55,7 +55,7 @@ export const ABOUT_ME_TIMELINE_ITEMS: IAboutmeTimelineItem[] = [
   {
     id: 4,
     title: "Job - Hotel Queen Anne & Crowne Plaza",
-    subTitle: "Receptionist",
+    subTitle: "Shift Leader - Reception",
     dotText: `/17/`,
     dotColor: "white",
     oppositeContent: (
