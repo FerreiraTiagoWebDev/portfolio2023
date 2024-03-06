@@ -9,22 +9,23 @@ import useScreenSize from "src/lib/hooks/useScreenSize";
 import ChatUi from "./ChatModel/chatUi";
 import HomeHeroSubtitle from "./subtitle";
 const HomeHero = () => {
-  const [hasVideoPlayed, setHasVideoPlayed] = useState(false);
+  const [hasVideoPlayed, setHasVideoPlayed] = useState<boolean | null>(null);
 
   const screenSize = useScreenSize();
 
   useEffect(() => {
-    const hasPlayed = localStorage.getItem("hasVideoPlayed");
+    const hasPlayed =
+      localStorage.getItem("hasVideoPlayed") === "true" ? true : false;
     if (hasPlayed) {
       setHasVideoPlayed(true);
     } else {
-      setTimeout(() => {
+      const timer = setTimeout(() => {
         setHasVideoPlayed(true);
         localStorage.setItem("hasVideoPlayed", "true");
       }, 5000);
-    }
 
-    return () => {};
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   return (
@@ -32,13 +33,13 @@ const HomeHero = () => {
       <Flex className={"relative flex-col items-center justify-center mb-12"}>
         <Heading
           gradient="primary"
-          className="text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-center border-r-8 rounded-br-2xl rounded-tr-2xl pr-2"
+          className="text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-8xl text-center border-r-8 rounded-br-2xl rounded-tr-2xl pr-2"
         >
           Frontend
         </Heading>
         <Heading
           gradient="primary"
-          className="text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-center border-r-8 rounded-br-2xl rounded-tr-2xl pr-2"
+          className="text-5xl xs:text-6xl sm:text-7xl md:text-8xl lg:text-8xl text-center border-r-8 rounded-br-2xl rounded-tr-2xl pr-2"
         >
           Developer
         </Heading>
@@ -68,13 +69,9 @@ const HomeHero = () => {
         </ComponentIsVisible>
       </Flex>
 
-      <ComponentIsVisible when={!hasVideoPlayed}>
-        <HomeHeroSubtitle />
-      </ComponentIsVisible>
+      <HomeHeroSubtitle />
 
-      <ComponentIsVisible when={hasVideoPlayed}>
-        <ChatUi />
-      </ComponentIsVisible>
+      <ChatUi />
     </Container>
   );
 };

@@ -1,13 +1,13 @@
 import { Heading } from "@ui/Heading";
 import { Flex } from "@ui/layout";
-import { SquareLoader } from "@ui/loader";
+
+interface IHomeHeroSubtitleProps {
+  timerDisplay: number;
+}
 
 const HomeHeroSubtitle = () => {
   return (
     <Flex className={"relative mb-12 justify-center"}>
-      <div className="">
-        <SquareLoader />
-      </div>
       <Heading
         variant="h2"
         gradient="primary"
