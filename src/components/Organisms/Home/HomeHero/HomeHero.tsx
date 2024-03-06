@@ -1,15 +1,16 @@
 "use client";
 
-import { Button } from "@ui/Button";
 import { Heading } from "@ui/Heading";
-import { NextLink } from "@ui/NextLink";
 import { Text } from "@ui/Text";
 import { Box, Container, Flex } from "@ui/layout";
 import { useEffect, useState } from "react";
 import ComponentIsVisible from "src/components/Atoms/ComponentIsVisible";
 import useScreenSize from "src/lib/hooks/useScreenSize";
+import ChatUi from "./ChatModel/chatUi";
+import HomeHeroSubtitle from "./subtitle";
 const HomeHero = () => {
   const [hasVideoPlayed, setHasVideoPlayed] = useState(false);
+
   const screenSize = useScreenSize();
 
   useEffect(() => {
@@ -66,37 +67,14 @@ const HomeHero = () => {
           </Box>
         </ComponentIsVisible>
       </Flex>
-      <Flex className={"mb-12 justify-center"}>
-        <Heading
-          variant="h2"
-          gradient="primary"
-          className="relative text-md py-1"
-        >
-          Crafting engaging user experiences
-          <span
-            className="absolute inset-0 text-transparent text-shadow"
-            style={{
-              textShadow: "37px 34px 3px rgba(136, 128, 128, 0.8)",
-              textDecoration: "line-through",
-              zIndex: -1,
-            }}
-          >
-            Crafting broken user experiences
-          </span>
-        </Heading>
-      </Flex>
-      <Flex className={"items-center justify-center gap-4 my-4"}>
-        <NextLink hover="opacity" href="/about">
-          <Button design="primary" className="text-white">
-            About me
-          </Button>
-        </NextLink>
-        <NextLink hover="opacity" href="/tech">
-          <Button design="secondary" className="text-white">
-            Tech
-          </Button>
-        </NextLink>
-      </Flex>
+
+      <ComponentIsVisible when={!hasVideoPlayed}>
+        <HomeHeroSubtitle />
+      </ComponentIsVisible>
+
+      <ComponentIsVisible when={hasVideoPlayed}>
+        <ChatUi />
+      </ComponentIsVisible>
     </Container>
   );
 };

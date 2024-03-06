@@ -13,6 +13,7 @@ export interface IFieldBaseProps
   error?: string;
   icon?: IconType;
   iconProps?: IconBaseProps;
+  labelIcon?: any;
   label?: string;
   labelProps?: {
     className?: string;
@@ -31,6 +32,7 @@ export function FieldBase({
   icon: Icon,
   iconPosition,
   iconProps,
+  labelIcon,
   label,
   labelProps,
   name,
@@ -60,6 +62,9 @@ export function FieldBase({
           {...labelProps?.rest}
         >
           {label}
+          <ComponentIsVisible when={!!labelIcon}>
+            {labelIcon}
+          </ComponentIsVisible>
         </label>
       </ComponentIsVisible>
       <div
@@ -73,6 +78,7 @@ export function FieldBase({
         })}
         {...rest}
       >
+        {children}
         {Icon && (
           <div className="flex items-center justify-center w-fit">
             <Icon
@@ -85,7 +91,6 @@ export function FieldBase({
             />
           </div>
         )}
-        {children}
       </div>
       <ComponentIsVisible when={!!error}>
         <div className="flex mt-1 ml-auto w-fit">
