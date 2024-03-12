@@ -39,16 +39,16 @@ const Header: React.FC<IHeader> = ({ ...headerProps }) => {
   return (
     <header
       {...headerProps}
-      className="w-full items-center p-2 md:p-4"
+      className="w-full items-center p-2"
       style={{
-        borderBottom: "15px solid #122B48",
-        borderWidth: "15px",
+        borderBottom: "10px solid #122B48",
+        borderWidth: "10px",
         display: "flex",
-        height: "10vh",
+        height: "85px",
       }}
     >
       <Box className="w-full flex-40">
-        <Box className="rounded-md px-1 ">
+        <Box className="rounded-md px-1">
           <NextLink buttonDesign="none" href="/" className="px-2">
             <CubeLogo />
           </NextLink>

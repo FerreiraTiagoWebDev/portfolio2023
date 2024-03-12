@@ -18,11 +18,12 @@ const Footer: React.FC<IFooter> = ({ ...footerProps }) => {
       {...footerProps}
       style={{
         width: "100%",
-        borderWidth: "15px",
-        borderTop: "15px solid #122B48",
+        borderTop: "10px solid #122B48",
+        borderWidth: "10px",
+        height: "100px",
       }}
     >
-      <Grid className="w-[100%] sm:w-[90%] md:w-[80%] lg:w-[70%] h-[15vh] md:h-[6vh] m-auto grid-cols-2 sm:grid-cols-2 md:grid-cols-4  items-center justify-center pt-4 pb-2 border-b-2 ">
+      <Grid className="w-[100%] sm:w-[90%] md:w-[80%] lg:w-[70%] m-auto grid-cols-2 sm:grid-cols-2 md:grid-cols-4 items-center justify-center p-1 border-b-2 ">
         <Link
           href={"mailto:tiagofqaferreira@gmail.com"}
           className="flex flex-col lg:flex-row items-center justify-center"
@@ -78,14 +79,18 @@ const Footer: React.FC<IFooter> = ({ ...footerProps }) => {
           </Link>
         </Flex>
       </Grid>
-      <Flex className="w-full items-center justify-center gap-4 py-1">
+      <Flex className="w-full items-center justify-center gap-2 py-1">
         <Box className="flex items-center">
           <MdLocationOn size={24} color="grey" />
-          <Text variant="small" align="center">
+          <Text variant="small" align="center" className="text-[10px]">
             Brussels, Belgium
           </Text>
         </Box>
-        <Text variant="small" align="center" className="font-semibold">
+        <Text
+          variant="small"
+          align="center"
+          className="font-semibold text-[10px]"
+        >
           @2023 Tiago Ferreira
         </Text>
       </Flex>

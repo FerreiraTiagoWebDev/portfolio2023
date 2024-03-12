@@ -10,7 +10,7 @@ export const buttonStyle = tv({
     },
     design: {
       primary:
-        "bg-gradient-to-r from-secondary to-secondaryLighter text-white hover:saturate-[0.8]",
+        "bg-gradient-to-r from-secondary to-secondaryLighter text-white hover:brightness-75",
       secondary: "bg-maroon text-white hover:brightness-75",
       "secondary-dark": "bg-secondary text-white hover:brightness-75",
       outline: "bg-transparent border border-secondaryLighter hover:opacity-60",

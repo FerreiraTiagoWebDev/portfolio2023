@@ -6,7 +6,7 @@ import { Box, Container, Flex } from "@ui/layout";
 import { useEffect, useState } from "react";
 import ComponentIsVisible from "src/components/Atoms/ComponentIsVisible";
 import useScreenSize from "src/lib/hooks/useScreenSize";
-import ChatUi from "./ChatModel/chatUi";
+import HomeHeroActionButtons from "./ActionButtons";
 import HomeHeroSubtitle from "./subtitle";
 const HomeHero = () => {
   const [hasVideoPlayed, setHasVideoPlayed] = useState<boolean | null>(null);
@@ -71,7 +71,7 @@ const HomeHero = () => {
 
       <HomeHeroSubtitle />
 
-      <ChatUi />
+      <HomeHeroActionButtons />
     </Container>
   );
 };
