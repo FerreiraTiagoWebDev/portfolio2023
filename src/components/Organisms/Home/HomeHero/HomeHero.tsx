@@ -29,7 +29,7 @@ const HomeHero = () => {
   }, []);
 
   return (
-    <Container className="flex flex-col items-center justify-center h-full">
+    <Container className="flex flex-col items-center justify-center h-full relative z-10">
       <Flex className={"relative flex-col items-center justify-center mb-12"}>
         <Heading
           gradient="primary"
@@ -72,6 +72,25 @@ const HomeHero = () => {
       <HomeHeroSubtitle />
 
       <HomeHeroActionButtons />
+
+      <Box className="h-full w-full absolute top-0 left-0 opacity-20 -z-10">
+        {/* <Image
+            src="/assets/images/background.jpg"
+            alt="hero"
+            blurDataURL="/images/fixxer-forms/backgroundLogin.png"
+            className="object-cover md:rounded-xl blur-sm"
+            fill
+            placeholder="blur"
+          /> */}
+        <video
+          autoPlay={true}
+          loop
+          className="object-cover md:rounded-xl w-full h-full backdrop-blur-md z-9 pointer-events-none"
+        >
+          <source src="/assets/videos/sky.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </Box>
     </Container>
   );
 };
