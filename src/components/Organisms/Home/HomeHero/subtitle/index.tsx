@@ -1,10 +1,6 @@
 import { Heading } from "@ui/Heading";
 import { Flex } from "@ui/layout";
 
-interface IHomeHeroSubtitleProps {
-  timerDisplay: number;
-}
-
 const HomeHeroSubtitle = () => {
   return (
     <Flex className={"relative mb-12 justify-center"}>

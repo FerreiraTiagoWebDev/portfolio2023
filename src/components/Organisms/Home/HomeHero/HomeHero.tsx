@@ -73,7 +73,7 @@ const HomeHero = () => {
 
       <HomeHeroActionButtons />
 
-      <Box className="h-full w-full absolute top-0 left-0 opacity-20 -z-10">
+      <Box className="h-full w-full absolute top-0 left-0 opacity-30 -z-10">
         {/* <Image
             src="/assets/images/background.jpg"
             alt="hero"
@@ -85,7 +85,8 @@ const HomeHero = () => {
         <video
           autoPlay={true}
           loop
-          className="object-cover md:rounded-xl w-full h-full backdrop-blur-md z-9 pointer-events-none"
+          muted
+          className="object-cover md:rounded-xl w-full h-full backdrop-blur-md pointer-events-none"
         >
           <source src="/assets/videos/sky.mp4" type="video/mp4" />
           Your browser does not support the video tag.
